@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="sky5 - 空へ">
 <meta property="og:description" content="开发环境配置 vscode JavaScript 和 vue 开发环境 editorconfig prettier eslint beautify  1. 原理editorConfig这个工具是用来设置文本编辑器的一些行为，比如说行尾风格，缩进类型力和大小，编码等 目的是为了统一编辑器的设置 prettier这是一个代码格式化工具，按照给定的设置对代码进行格式化 这里主要是对JS文件进行格式化 e">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-21T05:01:44.000Z">
+<meta property="og:updated_time" content="2018-05-13T08:07:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vscode开发环境配置">
 <meta name="twitter:description" content="开发环境配置 vscode JavaScript 和 vue 开发环境 editorconfig prettier eslint beautify  1. 原理editorConfig这个工具是用来设置文本编辑器的一些行为，比如说行尾风格，缩进类型力和大小，编码等 目的是为了统一编辑器的设置 prettier这是一个代码格式化工具，按照给定的设置对代码进行格式化 这里主要是对JS文件进行格式化 e">
@@ -338,7 +338,19 @@
             
 
             
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-13T16:07:02+08:00">
+                2018-05-13
+              </time>
             
           </span>
 
@@ -386,7 +398,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,348
+                  1,409
                 </span>
               
 
@@ -476,7 +488,11 @@
 <h4 id="vetur"><a href="#vetur" class="headerlink" title="vetur"></a>vetur</h4><p>vetur 这个插件就不需要多说了，必备</p>
 <h4 id="beautify-1"><a href="#beautify-1" class="headerlink" title="beautify"></a>beautify</h4><p>这个插件主要是为了处理模板中的<code>html</code>格式化问题，设置参考 vetur 中给出的配置</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// html模板的格式化配置</span><br><span class="line">"beautify.config": &#123;</span><br><span class="line">  "editorconfig": true,</span><br><span class="line">  "indent_size": 2,</span><br><span class="line">  "wrap_attributes": "force-aligned",</span><br><span class="line">  "wrap_attributes_indent_size": 2,</span><br><span class="line">  "wrap_line_length": 80</span><br><span class="line">&#125;,</span><br><span class="line">"beautify.language": &#123;</span><br><span class="line">  "html": ["htm", "html"]</span><br><span class="line">&#125;,</span><br><span class="line">"vetur.format.defaultFormatter.html": "js-beautify-html",</span><br><span class="line">"vetur.format.defaultFormatterOptions": &#123;</span><br><span class="line">  "js-beautify-html": &#123;</span><br><span class="line">    "editorconfig": true,</span><br><span class="line">    "indent_size": 2,</span><br><span class="line">    "wrap_attributes": "force-aligned",</span><br><span class="line">    "wrap_attributes_indent_size": 2,</span><br><span class="line">    "wrap_line_length": 80</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<p>这样就可以同时格式化模板和<code>js</code>了，至于样式文件的格式化，vetur 默认是使用<code>prettier</code>进行的，应该可以单独选择其他的格式化工具</p>
+<p>这样就可以同时格式化模板和<code>js</code>了，至于样式文件的格式化，<code>vetur</code> 默认是使用<code>prettier</code>进行的，应该可以单独选择其他的格式化工具</p>
+<ul>
+<li><u><strong>注意：<code>prettier</code>和<code>beautify</code>这两个插件会产生冲突，导致<code>prettier</code>在<code>js</code>文件的格式化中失效，所以需要配置<code>beautify</code>，让其不格式化<code>js</code>文件</strong></u></li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 在vscode 的配置文件中，加入这一段</span><br><span class="line">"beautify.ignore": "**/*.js"</span><br></pre></td></tr></table></figure>
 <h2 id="3-最后"><a href="#3-最后" class="headerlink" title="3. 最后"></a>3. 最后</h2><p>将 vscode 配置文件，<code>.editorconfig</code>，<code>.eslintrc.xx</code>，<code>.prettierrc</code>这些配置文件保存起来，便于之后使用</p>
 
       
