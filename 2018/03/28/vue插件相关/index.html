@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="Vue.use 使用vue-router 创建插件 需要对实例属性、虚拟DOM和实际DOM之间的关系有一个非常清晰的认识   前言个人认为插件就是添加一些全局的功能 在学习开发插件之前，先看一下虚拟 DOM 和实际 DOM 的关系  虚拟 DOM 和真实 DOM每一个Vue实例都是一个虚拟 DOM 个人认为虚拟 DOM 就是一个对象，里面存储了用来描述真实 DOM 的信息，包括结构，样式和行为，">
+<meta name="description" content="Vue.use 使用vue-router 创建插件 需要对实例属性、虚拟DOM和实际DOM之间的关系有一个非常清晰的认识   前言个人认为插件就是添加一些全局的功能 在学习开发插件之前，先看一下虚拟 DOM 和实际 DOM 的关系">
 <meta name="keywords" content="前端,Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue插件相关">
 <meta property="og:url" content="https://r-sky5.github.io/2018/03/28/vue插件相关/index.html">
 <meta property="og:site_name" content="sky5 - 空へ">
-<meta property="og:description" content="Vue.use 使用vue-router 创建插件 需要对实例属性、虚拟DOM和实际DOM之间的关系有一个非常清晰的认识   前言个人认为插件就是添加一些全局的功能 在学习开发插件之前，先看一下虚拟 DOM 和实际 DOM 的关系  虚拟 DOM 和真实 DOM每一个Vue实例都是一个虚拟 DOM 个人认为虚拟 DOM 就是一个对象，里面存储了用来描述真实 DOM 的信息，包括结构，样式和行为，">
+<meta property="og:description" content="Vue.use 使用vue-router 创建插件 需要对实例属性、虚拟DOM和实际DOM之间的关系有一个非常清晰的认识   前言个人认为插件就是添加一些全局的功能 在学习开发插件之前，先看一下虚拟 DOM 和实际 DOM 的关系">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s0aglw.dm.files.1drv.com/y4m4ft34mWb1vObzxf0mQHqO8s2xo7pWTi85cs6OuKB_x1ydohTEazzwBd0rvGIxgtF9a6eKgPmE8xPJpCYkL05R-HYb0pTMOOJYMG58dn_4uDJ4RkWwW0t9Co6_BF3y6phCdNdloyijY5HwcdlIN_788Jh7HIE5pc-VE2zf0Wk81Z5HftBy_e2auhtf9Y_dUbmZC78f8Ut11xRG8O0lmL69A?width=358&height=383&cropmode=none">
-<meta property="og:updated_time" content="2018-03-28T16:12:18.000Z">
+<meta property="og:updated_time" content="2018-07-02T05:57:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue插件相关">
-<meta name="twitter:description" content="Vue.use 使用vue-router 创建插件 需要对实例属性、虚拟DOM和实际DOM之间的关系有一个非常清晰的认识   前言个人认为插件就是添加一些全局的功能 在学习开发插件之前，先看一下虚拟 DOM 和实际 DOM 的关系  虚拟 DOM 和真实 DOM每一个Vue实例都是一个虚拟 DOM 个人认为虚拟 DOM 就是一个对象，里面存储了用来描述真实 DOM 的信息，包括结构，样式和行为，">
+<meta name="twitter:description" content="Vue.use 使用vue-router 创建插件 需要对实例属性、虚拟DOM和实际DOM之间的关系有一个非常清晰的认识   前言个人认为插件就是添加一些全局的功能 在学习开发插件之前，先看一下虚拟 DOM 和实际 DOM 的关系">
 <meta name="twitter:image" content="https://s0aglw.dm.files.1drv.com/y4m4ft34mWb1vObzxf0mQHqO8s2xo7pWTi85cs6OuKB_x1ydohTEazzwBd0rvGIxgtF9a6eKgPmE8xPJpCYkL05R-HYb0pTMOOJYMG58dn_4uDJ4RkWwW0t9Co6_BF3y6phCdNdloyijY5HwcdlIN_788Jh7HIE5pc-VE2zf0Wk81Z5HftBy_e2auhtf9Y_dUbmZC78f8Ut11xRG8O0lmL69A?width=358&height=383&cropmode=none">
 
 
@@ -350,8 +350,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-29T00:12:18+08:00">
-                2018-03-29
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-02T13:57:46+08:00">
+                2018-07-02
               </time>
             
           </span>
@@ -447,6 +447,7 @@
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>个人认为插件就是添加一些全局的功能</p>
 <p>在学习开发插件之前，先看一下虚拟 DOM 和实际 DOM 的关系</p>
 <hr>
+<a id="more"></a>
 <h2 id="虚拟-DOM-和真实-DOM"><a href="#虚拟-DOM-和真实-DOM" class="headerlink" title="虚拟 DOM 和真实 DOM"></a>虚拟 DOM 和真实 DOM</h2><p>每一个<code>Vue</code>实例都是一个虚拟 DOM</p>
 <p>个人认为虚拟 DOM 就是一个对象，里面存储了用来描述真实 DOM 的信息，包括结构，样式和行为，并且可以通过虚拟 DOM 对这些信息进行监控和操作。</p>
 <p>可以使用渲染函数将虚拟 DOM 渲染为真实的 DOM，并且该虚拟 DOM 和生成的真实 DOM 是由关联的</p>
